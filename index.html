@@ -5,12 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="./css/slick.css"/>
     <link rel="stylesheet" href="./css/common.css">
     <link rel="stylesheet" href="./css/style.css?ver=1">
 
     <script src="./js/jquery.min.js"></script>
-    <script defer src="./js/script.js"></script>
-    
+    <script src="./js/script.js"></script>
+    <script defer type="text/javascript" src="./js/slick.js"></script>
+
+    <script>
+        $(window).on('load', function(){
+            $('.visual_wrap ul').slick({
+                infinite: true,
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                autoplay:true,
+                autoplaySpeed:3000,
+                arrows:false,
+                dots:true,
+                appendDots: '.slick-nav'
+            });
+        });
+        
+    </script>
     
 </head>
 <body>
@@ -39,12 +56,31 @@
 
     <div class="wrapper">
         <section class="main_text max">
-            <h3>The very first portfolio,<br>Kim Kyungnam.</h3>
+            <h3>The very first portfolio,<br>Kkn.</h3>
         </section>
 
         <div class="main_visual">
+            <div class="visual_wrap">
+                <ul>
+                    <li><a href=""><img src="./img/1.jpg" data-mobile="./img/1_mobile.jpg" alt=""></a></li>
+                    <li><a href=""><img src="./img/2.jpg" data-mobile="./img/2_mobile.jpg" alt=""></a></li>
+                    <li><a href=""><img src="./img/3.jpg" data-mobile="./img/3_mobile.jpg" alt=""></a></li>
+                </ul>
+            </div>
             <div class="max">
-                <div class="info_box"></div>
+                <div class="slick-nav"></div>
+                <div class="info_box">
+                    <div class="box">
+                        <h2>Hello, 
+                            <br>I’m Kkn !</h2>
+                        <dl>
+                            <dt>Kkn</dt>
+                            <dd>Communication Designer</dd>
+                            <dd>0000@gmail.com</dd>
+                            <dd>010.0000.0000</dd>
+                        </dl>
+                    </div>
+                </div>
             </div>
             
         </div>

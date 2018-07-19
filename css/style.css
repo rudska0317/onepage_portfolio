@@ -62,6 +62,7 @@ header {
 }
 header > .max {
     position: relative;
+
 }
 header .logo {
     
@@ -121,6 +122,7 @@ header nav > a > span {
     right:0;
     background-color:#1b1b1c;
     height:2px;
+    
 }
 header nav > a > span:nth-child(2) {
     top:50%;
@@ -135,21 +137,58 @@ section.main_text {
     margin:190px auto 150px;
 }
 section.main_text h3 {
-    font-size:32px;
+    font-size:28px;
     font-weight:800;
     line-height:1.5;
+}
+.main_visual .visual_wrap {
+    width:2000px;
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%, -50%);
 }
 .main_visual {
     max-width:2000px;
     margin:auto;
     height:856px;
     background-color:lightpink;
-    
+    position: relative;
+    overflow:hidden;
 }
 .main_visual > .max {
     height:100%;
-    position: relative;
+    position: absolute;
+    top:0;
+    left:0;
+    right:0;
+    width:100%;
 }
+.slick-dots {
+    position: absolute;
+    top:50%;
+    transform:translate(0, -50%);
+    right:20px;
+}
+.slick-dots li button {
+    width:18px;
+    height:18px;
+    box-sizing:border-box;
+    border:1px #fff solid;
+    border-radius:50%;
+    margin:5px 0;
+    text-indent:-999px;
+    overflow:hidden;
+    background-color:transparent;
+    cursor:pointer;
+}
+.slick-dots li button:focus {
+    outline:none;
+}
+.slick-dots li.slick-active button {
+    background-color:#fff;
+}
+
 .main_visual .info_box {
     position: absolute;
     width:538px;
@@ -159,6 +198,42 @@ section.main_text h3 {
     left:20px;
     transform:translate(0, -50%);
 }
+
+.main_visual .info_box .box {
+    padding:117px 74px 93px;
+}
+.main_visual .info_box h2 {
+    font-size:24px;
+    line-height:1.25;
+    font-weight:800;
+}
+.main_visual .info_box dl {
+    margin-top:110px;
+
+}
+.main_visual .info_box dl dt {
+    padding-top:30px;
+    font-size:14px;
+    font-weight:600;
+    margin-bottom:53px;
+    position:relative;
+}
+.main_visual .info_box dl dt:before {
+    content:'';
+    position:absolute;
+    top:0;
+    left:0;
+    width:14px;
+    height:5px;
+    background-color:rgba(0, 0, 0, 0.3);
+}
+.main_visual .info_box dl dd {
+    font-size:14px;
+    font-weight:600;
+    margin-bottom:15px;
+}
+
+
 
 @media (min-width:1151px){
      header nav > a {
@@ -190,7 +265,32 @@ section.main_text h3 {
     .wrapper {
         padding-top:50px;
     }
+
+    section.main_text {
+        margin:60px auto 30px;
+    }
+    section.main_text h3 {
+        font-size:13px;
+    }
+    
+    .main_visual .info_box {
+        width:225px;
+        height:225px;
+        transition:all .2s;
+    }
+    .main_visual {
+        height:350px;
+        transition:all .2s;
+    }
 }
+
+
+
+
+
+
+
+
 
 
 
