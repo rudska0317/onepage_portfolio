@@ -54,14 +54,65 @@ function scrl_event(pos){
     }, 1000)
 }
 
-$('#menu-event li a').click(function(e){
-    e.preventDefault();
-     var target = $(this).data('target');
+function menu_event(_this){
+    var target = _this.data('target');
     var pos    = $('#'+target).position().top;
 
     scrl_event(pos);
+}
+
+$('#menu-event li a').click(function(e){
+    e.preventDefault();
+    menu_event( $(this) );
+
 });
+
+$(document).on('click','#side-menu-ul li a',function(e){
+    e.preventDefault();
+    $('body').removeClass('fixed_show');
+    menu_event( $(this) );
+})
 
 $('#top-btn').click(function(){
     scrl_event(0);
 });
+
+$('#side-menu-show').click(function(e){
+    e.preventDefault();
+    $('body').addClass('fixed_show');
+
+    if($('#side-menu-ul li').length == 0){
+        var li = '';
+        // var menu = $('#menu-event')[0].outerHTML;
+    
+        $('#menu-event li').each(function(){
+            li += '<li><a href=""data-target="' + $(this).find('a').data('target') + '">' + $(this).text().toLowerCase() + '</a></li>';
+        });
+
+        $('#side-menu-ul').html(li);
+    }
+    
+});
+
+$('#side-menu-hide').click(function(e){
+    e.preventDefault();
+    $('body').removeClass('fixed_show');
+});
+
+ // var name_val = $('input#name').val
+
+ $('#form-send').click(function(e){
+    e.preventDefalt();
+    // form 통쨰로 받는거                 $('form#mail_form').serialize();
+    // form 통쨰로 배열로 만들어 받는거    $('form#mail_form').serializeArray();
+
+    var name_val = $('#name').val();
+    if(name_val.length < 3){
+        alert('이름은 3자리 이상 입력해주세요')
+        $('#name').focus();
+        return false;
+    }
+
+
+    // 정규표현식, 정규식 정규식.test( 테스트할 값 )
+ });

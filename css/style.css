@@ -95,6 +95,9 @@ body.on_scrl header .logo h1 {
     line-height:80px;
     transition:all .2s;
 }
+body.fixed_show {
+    overflow:hidden;
+}
 header nav {
     position:absolute;
     right:20px;
@@ -586,10 +589,75 @@ footer {
     line-height:67px;
     border-radius:50%;
     box-shadow:-1.8px 3.6px 7.3px 0.7px rgba(0, 0, 0, 0.73);
+    cursor:pointer;
+    opacity:0;
+    z-index:-1;
+}
+body.on_scrl #top-btn{
+    opacity:1;
+    z-index:100;
+    transition:opacity .2s;
 }
 #top-btn.end_point {
     margin-bottom:5vw;
     transition:all .5s;
+}
+
+#side-menu {
+    position:fixed;
+    width:100%;
+    top:0;
+    left:100%;
+    right:auto;
+    bottom:0;
+    background-color:#1b1b1c;
+    z-index:200;
+    transition:left .3s;
+}
+body.fixed_show #side-menu {
+    left:0;
+    
+}
+#side-menu .side-top {
+    padding:20px;
+}
+#side-menu .side-top .title {
+    color:#fff;
+    font-weight:800;
+    font-size:17px;
+    letter-spacing:6px;
+}
+#side-menu-hide {
+    position:relative;
+    float:right;
+    width:14px;
+    height:14px;
+}
+#side-menu-hide > span {
+    position:absolute;
+    width:1px;
+    background-color:#fff;
+    height:17px;
+    transform: rotate(45deg);
+    right:7px;
+}
+#side-menu-hide > span:last-child {
+    transform: rotate(-45deg);
+    
+}
+
+#side-menu-ul {
+    margin:130px 38px 0;
+}
+#side-menu-ul li {
+
+}
+#side-menu-ul > li > a {
+    color:#fff;
+    font-size:14px;
+    font-weight:800;
+    text-transform:capitalize;
+    
 }
 
 @media (max-width:1700px){
